@@ -1,0 +1,17 @@
+{
+  "name": "quillstack.com",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "rm -rf docs",
+    "build": "vite build",
+    "postbuild": "bin/postbuild.sh"
+  },
+  "dependencies": {
+    "vue": "^3.0.0-rc.1"
+  },
+  "devDependencies": {
+    "vite": "^1.0.0-rc.1",
+    "@vue/compiler-sfc": "^3.0.0-rc.1"
+  }
+}
