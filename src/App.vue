@@ -8,9 +8,9 @@
     <footer class="mt-32">
         <p>
             &copy; 2020
-            <router-link class="link" :to="{ name: 'home' }">
+            <a class="link" href="/">
                 The Quill Stack
-            </router-link>
+            </a>
         </p>
     </footer>
 </template>
