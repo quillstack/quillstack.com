@@ -1,22 +1,22 @@
 <template>
-    <div class="w-11/12 md:w-1/3 lg:w-1/4 my-4 pl-2 mx-auto">
-        <a href="/">
-            <img src="https://quillstack.com/quillstack.png" alt="The Quill Stack" class="mx-auto"/>
-        </a>
+    <div>
+        <my-header/>
+        <router-view />
+        <my-footer/>
     </div>
-    <router-view />
-    <footer class="mt-32">
-        <p>
-            &copy; 2020
-            <a class="link" href="/">
-                The Quill Stack
-            </a>
-        </p>
-    </footer>
 </template>
 
 <script>
 export default {
-    name: 'App'
+    watch: {
+        '$route': {
+            immediate: true,
+            handler  : function (to) {
+                document.title = to.meta.title || 'QuillStack';
+                document.body.scrollTop            = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            },
+        },
+    },
 };
 </script>

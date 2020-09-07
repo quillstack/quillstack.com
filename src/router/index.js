@@ -1,13 +1,18 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '../views/HomePage.vue';
-import DependencyInjection from '../views/DependencyInjection.vue';
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import DependencyInjection from "@/views/DependencyInjection";
+import HomePage from "@/views/HomePage";
 
-const history = createWebHistory();
+Vue.use(VueRouter);
+
 const routes = [
     {
         path: '/dependency-injection.htm',
         name: 'dependency-injection',
-        component: DependencyInjection
+        component: DependencyInjection,
+        meta: {
+            title: 'QuillStack - Dependency Injection',
+        }
     },
     {
         path: '/di.htm',
@@ -18,13 +23,17 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: HomePage
+        component: HomePage,
+        meta: {
+            title: 'QuillStack',
+        }
     }
 ];
 
-const router = createRouter({
+const router = new VueRouter({
+    mode: 'history',
+    base: process.env.BASE_URL,
     routes,
-    history
 });
 
 export default router;
