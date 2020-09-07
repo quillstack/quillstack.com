@@ -9,6 +9,6 @@ pages for components:
 * Dependency Injection:
     - Documentation: https://quillstack.com/di
     - Component: https://github.com/quillstack/di
-* ~Benchmark Tool:
+* Benchmark Tool:
     - Documentation: https://quillstack.com/benchmark
     - Component: https://github.com/quillstack/benchmark
