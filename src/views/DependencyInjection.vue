@@ -5,7 +5,8 @@
         </h1>
         <p>
             <strong>QuillStack DI</strong> is the dependency injection container based on
-            <a class="link" href="https://www.php-fig.org/psr/psr-11/" target="_blank">PSR-11: Container interface</a>.
+            <a class="link" href="https://www.php-fig.org/psr/psr-11/" target="_blank" rel="noopener noreferrer">
+                PSR-11: Container interface</a>.
             The library was built with the main goal: to be fast!
         </p>
         <h3>
@@ -130,7 +131,7 @@
         </h2>
         <p>
             To install this package, run the standard command using
-            <a class="link" target="_blank" href="https://getcomposer.org/">Composer</a>:
+            <a class="link" target="_blank" href="https://getcomposer.org/" rel="noopener noreferrer">Composer</a>:
         </p>
         <div class="code">
             <p>
