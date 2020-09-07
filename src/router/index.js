@@ -1,23 +1,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import DependencyInjection from "@/views/DependencyInjection";
-import HomePage from "@/views/HomePage";
+import DependencyInjection from '@/views/DependencyInjection';
+import HomePage from '@/views/HomePage';
 
 Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/dependency-injection/',
+        path: '/di/',
         name: 'di',
         component: DependencyInjection,
         meta: {
-            title: 'QuillStack - Dependency Injection',
-        }
-    },
-    {
-        path: '/di/',
-        redirect: {
-            name: 'di'
+            title: 'QuillStack - Dependency Injection'
         }
     },
     {
@@ -25,7 +19,7 @@ const routes = [
         name: 'home',
         component: HomePage,
         meta: {
-            title: 'QuillStack',
+            title: 'QuillStack'
         }
     }
 ];
@@ -33,7 +27,7 @@ const routes = [
 const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
-    routes,
+    routes
 });
 
 export default router;
