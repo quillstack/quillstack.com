@@ -7,17 +7,17 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/dependency-injection.htm',
-        name: 'dependency-injection',
+        path: '/dependency-injection/',
+        name: 'di',
         component: DependencyInjection,
         meta: {
             title: 'QuillStack - Dependency Injection',
         }
     },
     {
-        path: '/di.htm',
+        path: '/di/',
         redirect: {
-            name: 'dependency-injection'
+            name: 'di'
         }
     },
     {

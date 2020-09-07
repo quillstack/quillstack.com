@@ -5,7 +5,7 @@ module.exports = {
             registry: undefined,
             renderRoutes: [
                 '/',
-                '/dependency-injection.html',
+                '/dependency-injection/',
             ],
             useRenderEvent: true,
             headless: true,

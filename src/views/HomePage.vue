@@ -8,7 +8,7 @@
         </p>
         <ul class="list-disc">
             <li>
-                <router-link :to="{ name: 'dependency-injection' }" class="link">
+                <router-link :to="{ name: 'di' }" class="link">
                     Dependency Injection Container
                 </router-link>
             </li>
