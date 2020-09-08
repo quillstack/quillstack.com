@@ -1,8 +1,5 @@
 <template>
     <div>
-        <h1>
-            QuillStack
-        </h1>
         <p>
             Components:
         </p>

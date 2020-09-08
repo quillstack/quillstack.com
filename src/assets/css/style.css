@@ -1,15 +1,19 @@
 @tailwind base;
 
+body {
+    background: #e9e9eb;
+}
+
 h1 {
-    @apply mt-10 bg-gray-200 text-center text-4xl border-t font-serif px-5 py-3 leading-10;
+    @apply mt-10 text-center text-4xl border-t font-serif px-5 py-3 leading-10;
 }
 
 h2 {
-    @apply mt-10 bg-gray-200 text-center text-2xl border-t font-serif px-5 py-3 leading-8;
+    @apply mt-10 text-center text-2xl border-t font-serif px-5 py-3 leading-8;
 }
 
 h3 {
-    @apply mt-8 bg-gray-200 text-center text-xl border-t font-serif px-5 py-3 leading-6;
+    @apply mt-8 text-center text-xl border-t font-serif px-5 py-3 leading-6;
 }
 
 p, ul {
@@ -47,19 +51,46 @@ ul {
 }
 
 div.code {
-    @apply bg-gray-900 font-mono text-white py-1 border-4 border-l-0 border-r-0 border-gray-500;
+    @apply pt-12 pb-10 w-full overflow-x-scroll;
+    background: #2c2c2c;
 }
 
-div.code p span {
-    @apply block;
+div.code ul li {
+    @apply whitespace-no-wrap;
+    font-family: monospace;
 }
 
-div.code p span.i-1 {
-    @apply pl-10;
+div.code ul li span {
+    @apply text-lg;
 }
 
-div.code p span.i-2 {
-    @apply pl-20;
+div.code ul span.variable {
+    color: #a09be7;
+}
+
+div.code ul span.keyword {
+    color: #ea5271;
+}
+
+div.code ul span.string {
+    color: #49a078;
+}
+
+div.code ul span.class {
+    color: #79addc;
+}
+
+div.code ul span.char {
+    color: #e9e9e9;
+}
+
+div.code ul span.method {
+    color: #f7c548;
+}
+
+div.code ul span.intent {
+    display: inline-block;
+    width: 50px;
 }
 
 @tailwind components;

@@ -1,0 +1,10 @@
+[
+    "<?php",
+    "    ",
+    "use QuillStack\\DI\\Container;",
+    "    ",
+    "require __DIR__ . '/../vendor/autoload.php';",
+    "    ",
+    "$container = new Container();",
+    "$controller = $container->get(ExampleController::class);"
+]

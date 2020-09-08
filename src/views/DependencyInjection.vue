@@ -28,11 +28,7 @@
         <p>
             Every time you need a create a new instance of some class, you use the keyword <em>new</em>, like here:
         </p>
-        <div class="code">
-            <p>
-                $dog = new Dog('Forest');
-            </p>
-        </div>
+        <code-php :lines="newDog"/>
         <p>
             In our example the string parameter <em>Forest</em>, which is a lovely name for a dog, is a dependency we
             need to know when we're creating a new <em>Dog</em> object.
@@ -61,30 +57,14 @@
         <p>
             In that way we can end up with a lot of dependencies, usually injected via constructors:
         </p>
-        <div class="code">
-            <p>
-                <span>$media = new MediaService(</span>
-                <span class="i-1">new Logger(),</span>
-                <span class="i-1">new MediaRepository(</span>
-                <span class="i-2">new Database(),</span>
-                <span class="i-2">new Logger()</span>
-                <span class="i-1">)</span>
-                <span>);</span>
-            </p>
-        </div>
+        <code-php :lines="lotOfDependencies"/>
         <p>
             Do we want to remember all these classes when we need to have an instance of the Media Service? No!
         </p>
         <p>
             This is a moment when a container helps us to sort it out and change it to this:
         </p>
-        <div class="code">
-            <p>
-                <span>$media = $container->get(</span>
-                <span class="i-1">MediaService::class</span>
-                <span>);</span>
-            </p>
-        </div>
+        <code-php :lines="mediaService"/>
         <p>
             So much better! And there's no magic. The dependency injection container checks every parameter of the given
             class and create a new instance of required objects. If these classes are dependent on other objects,
@@ -100,29 +80,11 @@
             Containers are often used in MVC frameworks. The first initialized class is a <em>Controller</em>, where
             we can inject some dependencies, usually services:
         </p>
-        <div class="code">
-            <p>
-                <span>new MediaController(</span>
-                <span class="i-1">new MediaService(</span>
-                <span class="i-2">new Logger(),</span>
-                <span class="i-2">new MediaRepository(</span>
-                <span class="i-2"><span class="i-1">new Database(),</span></span>
-                <span class="i-2"><span class="i-1">new Logger()</span></span>
-                <span class="i-2">)</span>
-                <span class="i-1">)</span>
-                <span>);</span>
-            </p>
-        </div>
+        <code-php :lines="mvcDependencies"/>
         <p>
             Without a DI Container our life is hard. We can easily fix it:
         </p>
-        <div class="code">
-            <p>
-                <span>$media = $container->get(</span>
-                <span class="i-1">MediaController::class</span>
-                <span>);</span>
-            </p>
-        </div>
+        <code-php :lines="mvcContainer"/>
         <p>
             All of this work is done by framework for us, so we don't have to worry about it.
         </p>
@@ -134,9 +96,13 @@
             <a class="link" target="_blank" href="https://getcomposer.org/" rel="noopener noreferrer">Composer</a>:
         </p>
         <div class="code">
-            <p>
-                composer require quillstack/di
-            </p>
+            <ul>
+                <li>
+                    <span class="char">
+                        composer require quillstack/di
+                    </span>
+                </li>
+            </ul>
         </div>
         <p>
             The package will be ready to use after that.
@@ -158,17 +124,7 @@
         <p>
             You can easily start using a DI Container:
         </p>
-        <div class="code">
-            <p>
-                <span class="mb-4">&lt;?php</span>
-                <span class="mb-4">use QuillStack\DI\Container;</span>
-                <span class="mb-4">require __DIR__ . '/../vendor/autoload.php';</span>
-                <span>$container = new Container();</span>
-                <span>$controller = $container->get(</span>
-                <span class="i-1">ExampleController::class</span>
-                <span>);</span>
-            </p>
-        </div>
+        <code-php :lines="simpleUsage"/>
         <p>
             This code creates an instance of the container class. The container creates every class with <em>get</em>
             method, in our case it will be <em>ExampleController</em>.
@@ -179,13 +135,7 @@
         <p>
             If you want to define which class should be loaded based on an interface, you can easily do that:
         </p>
-        <div class="code">
-            <p>
-                <span>$container = new Container([</span>
-                <span class="i-1">LoggerInterface::class => Logger::class,</span>
-                <span>]);</span>
-            </p>
-        </div>
+        <code-php :lines="interfaces"/>
         <p>
             When you create a new container, you can define a configuration of interfaces and class which should be
             use when these interfaces are called.
@@ -206,15 +156,7 @@
             If some of your classes require parameters, define them as an array passed on the second parameter to
             the container:
         </p>
-        <div class="code">
-            <p>
-                <span>$container = new Container([], [</span>
-                <span class="i-1">Database::class => [</span>
-                <span class="i-2">'hostname' => 'localhost',</span>
-                <span class="i-1">],</span>
-                <span>]);</span>
-            </p>
-        </div>
+        <code-php :lines="parameters"/>
         <p>
             Of course you can take the value of the hostname from the configuration files.
         </p>
@@ -222,7 +164,40 @@
 </template>
 
 <script>
+import CodePhp from "@/components/CodePhp";
+import NewDog from '@/content/code-php/di/new-dog.json';
+import LotOfDependencies from '@/content/code-php/di/lot-of-dependencies.json';
+import MediaService from '@/content/code-php/di/media-service.json';
+import MvcDependencies from '@/content/code-php/di/mvc-dependencies.json';
+import MvcContainer from '@/content/code-php/di/mvc-container.json';
+import SimpleUsage from '@/content/code-php/di/simple-usage.json';
+import Interfaces from '@/content/code-php/di/interfaces.json';
+import Parameters from '@/content/code-php/di/parameters.json';
+
 export default {
-    name: 'DependencyInjection'
+    name: 'DependencyInjection',
+    components: {CodePhp},
+    data() {
+        return {
+            newDog: [],
+            lotOfDependencies: [],
+            mediaService: [],
+            mvcDependencies: [],
+            mvcContainer: [],
+            simpleUsage: [],
+            interfaces: [],
+            parameters: []
+        }
+    },
+    mounted() {
+        this.newDog = NewDog;
+        this.lotOfDependencies = LotOfDependencies;
+        this.mediaService = MediaService;
+        this.mvcDependencies = MvcDependencies;
+        this.mvcContainer = MvcContainer;
+        this.simpleUsage = SimpleUsage;
+        this.interfaces = Interfaces;
+        this.parameters = Parameters;
+    }
 };
 </script>

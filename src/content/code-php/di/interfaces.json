@@ -1,0 +1,5 @@
+[
+    "$container = new Container([",
+    "    LoggerInterface::class => Logger::class,",
+    "]);"
+]

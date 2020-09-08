@@ -1,5 +1,7 @@
 # QuillStack.com
 
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-1.8-green)](https://tailwindcss.com/)
+[![Vue JS](https://img.shields.io/badge/Vue%20JS-2.6-green)](https://vuejs.org/)
 [![StyleCI](https://github.styleci.io/repos/292646211/shield?branch=master)](https://github.styleci.io/repos/292646211?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/quillstack/quillstack.com/badge)](https://www.codefactor.io/repository/github/quillstack/quillstack.com)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=quillstack_quillstack.com&metric=alert_status)](https://sonarcloud.io/dashboard?id=quillstack_quillstack.com)
