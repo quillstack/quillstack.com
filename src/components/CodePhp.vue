@@ -1,7 +1,9 @@
 <template>
     <div class="code">
-        <ul v-if="areLinesLoaded">
-            <li v-for="line in getLines" v-html="line"></li>
+        <ul>
+            <li v-for="(line, index) in getLines" :key="index">
+                <span v-html="line"></span>
+            </li>
         </ul>
     </div>
 </template>
@@ -220,30 +222,23 @@ export default {
         }
     },
     computed: {
-        areLinesLoaded() {
-            if (typeof this.lines === 'object') {
-                return Object.keys(this.lines).length;
-            }
-
-            return this.lines.length;
-        },
         getLines() {
             return this.lines
-                .map(line => this.markClassNameStatic(line))
-                .map(line => this.markClassNames(line))
-                .map(line => this.markImports(line))
-                .map(line => this.markMethodCall(line))
-                .map(line => this.markStrings(line))
-                .map(line => this.markSpecialCharacters(line))
-                .map(line => this.markVariablesAndKeywords(line))
-                .map(line => this.escapeHtml(line))
-                .map(line => this.convertClassNamesToHtml(line))
-                .map(line => this.convertCharsToHtml(line))
-                .map(line => this.convertKeywordsToHtml(line))
-                .map(line => this.convertStringsToHtml(line))
-                .map(line => this.convertMethodCallsToHtml(line))
-                .map(line => this.convertVariablesAndKeywordToHtml(line))
-                .map(line => this.addIntents(line))
+                // .map(line => this.markClassNameStatic(line))
+                // .map(line => this.markClassNames(line))
+                // .map(line => this.markImports(line))
+                // .map(line => this.markMethodCall(line))
+                // .map(line => this.markStrings(line))
+                // .map(line => this.markSpecialCharacters(line))
+                // .map(line => this.markVariablesAndKeywords(line))
+                // .map(line => this.escapeHtml(line))
+                // .map(line => this.convertClassNamesToHtml(line))
+                // .map(line => this.convertCharsToHtml(line))
+                // .map(line => this.convertKeywordsToHtml(line))
+                // .map(line => this.convertStringsToHtml(line))
+                // .map(line => this.convertMethodCallsToHtml(line))
+                // .map(line => this.convertVariablesAndKeywordToHtml(line))
+                // .map(line => this.addIntents(line))
             ;
         }
     }

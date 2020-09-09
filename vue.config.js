@@ -2,7 +2,6 @@ module.exports = {
     outputDir: 'docs',
     pluginOptions: {
         prerenderSpa: {
-            registry: undefined,
             renderRoutes: [
                 '/',
                 '/di/',

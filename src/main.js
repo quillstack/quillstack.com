@@ -4,11 +4,13 @@ import '@/assets/css/style.css';
 import App from '@/App';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import CodePhp from "@/components/CodePhp";
 
 Vue.config.productionTip = false;
 
 Vue.component('my-footer', Footer);
 Vue.component('my-header', Header);
+Vue.component('code-php', CodePhp);
 
 new Vue({
   router,

@@ -28,7 +28,7 @@
         <p>
             Every time you need a create a new instance of some class, you use the keyword <em>new</em>, like here:
         </p>
-        <code-php :lines="newDog"/>
+        <code-php :lines="newDog"></code-php>
         <p>
             In our example the string parameter <em>Forest</em>, which is a lovely name for a dog, is a dependency we
             need to know when we're creating a new <em>Dog</em> object.
@@ -164,22 +164,21 @@
 </template>
 
 <script>
-import CodePhp from "@/components/CodePhp";
-import NewDog from '@/content/code-php/di/new-dog.json';
-import LotOfDependencies from '@/content/code-php/di/lot-of-dependencies.json';
-import MediaService from '@/content/code-php/di/media-service.json';
-import MvcDependencies from '@/content/code-php/di/mvc-dependencies.json';
-import MvcContainer from '@/content/code-php/di/mvc-container.json';
-import SimpleUsage from '@/content/code-php/di/simple-usage.json';
-import Interfaces from '@/content/code-php/di/interfaces.json';
-import Parameters from '@/content/code-php/di/parameters.json';
+import LotOfDependencies from '@/assets/content/code-php/di/lot-of-dependencies.json';
+import MediaService from '@/assets/content/code-php/di/media-service.json';
+import MvcDependencies from '@/assets/content/code-php/di/mvc-dependencies.json';
+import MvcContainer from '@/assets/content/code-php/di/mvc-container.json';
+import SimpleUsage from '@/assets/content/code-php/di/simple-usage.json';
+import Interfaces from '@/assets/content/code-php/di/interfaces.json';
+import Parameters from '@/assets/content/code-php/di/parameters.json';
 
 export default {
     name: 'DependencyInjection',
-    components: {CodePhp},
     data() {
         return {
-            newDog: [],
+            newDog: [
+                "$dog = new Dog('Forest');"
+            ],
             lotOfDependencies: [],
             mediaService: [],
             mvcDependencies: [],
@@ -190,7 +189,6 @@ export default {
         }
     },
     mounted() {
-        this.newDog = NewDog;
         this.lotOfDependencies = LotOfDependencies;
         this.mediaService = MediaService;
         this.mvcDependencies = MvcDependencies;
