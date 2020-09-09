@@ -159,18 +159,18 @@ export default {
             const regexp = new RegExp(replace,'g');
             const marker = this.markers.method;
 
-            return line.replaceAll(regexp, marker + '->$1(' + marker);
+            return this._.replace(line, regexp, marker + '->$1(' + marker);
         },
         markImports(line) {
             const marker = this.markers.class;
 
-            return line.replaceAll(/use (.*?);/g, 'use ' + marker + '$1' + marker + ';');
+            return this._.replace(line, /use (.*?);/g, 'use ' + marker + '$1' + marker + ';');
         },
         markClassNameStatic(line) {
             const marker = this.markers.class;
             const keyword = this.markers.keyword;
 
-            return line.replaceAll(/([_a-zA-Z]+)::class/g, marker + '$1::' + marker + keyword + 'class' + keyword);
+            return this._.replace(line, /([_a-zA-Z]+)::class/g, marker + '$1::' + marker + keyword + 'class' + keyword);
         },
         getMarkerToRegexp(marker) {
             return `${marker}([^${marker}]*)${marker}`;
@@ -182,63 +182,63 @@ export default {
             const replace = this.getMarkerToRegexp(this.markers.method);
             const regexp = new RegExp(replace,'g');
 
-            return line.replaceAll(regexp, '<span class="method">$1</span>');
+            return this._.replace(line, regexp, '<span class="method">$1</span>');
         },
         convertVariablesAndKeywordToHtml(line) {
             const replace = this.getMarkerToRegexp(this.markers.variable);
             const regexp = new RegExp(replace,'g');
 
-            return line.replaceAll(regexp, '<span class="variable">$1</span>');
+            return this._.replace(line, regexp, '<span class="variable">$1</span>');
         },
         convertClassNamesToHtml(line) {
             const replace = this.getMarkerToClassRegexp(this.markers.class);
             const regexp = new RegExp(replace,'g');
 
-            return line.replaceAll(regexp, '<span class="class">$1</span>');
+            return this._.replace(line, regexp, '<span class="class">$1</span>');
         },
         convertCharsToHtml(line) {
             const replace = this.getMarkerToRegexp(this.markers.char);
             const regexp = new RegExp(replace,'g');
 
-            return line.replaceAll(regexp, '<span class="char">$1</span>');
+            return this._.replace(line, regexp, '<span class="char">$1</span>');
         },
         convertKeywordsToHtml(line) {
             const replace = this.getMarkerToRegexp(this.markers.keyword);
             const regexp = new RegExp(replace,'g');
 
-            return line.replaceAll(regexp, '<span class="keyword">$1</span>');
+            return this._.replace(line, regexp, '<span class="keyword">$1</span>');
         },
         convertStringsToHtml(line) {
             const replace = this.getMarkerToRegexp(this.markers.string);
             const regexp = new RegExp(replace,'g');
 
-            return line.replaceAll(regexp, '<span class="string">$1</span>');
+            return this._.replace(line, regexp, '<span class="string">$1</span>');
         },
         escapeHtml(line) {
             return line.replace('<', '&lt;');
         },
         addIntents(line) {
-            return line.replaceAll('    ', '<span class="intent"></span>');
+            return this._.replace(line, '    ', '<span class="intent"></span>');
         }
     },
     computed: {
         getLines() {
             return this.lines
-                // .map(line => this.markClassNameStatic(line))
-                // .map(line => this.markClassNames(line))
-                // .map(line => this.markImports(line))
-                // .map(line => this.markMethodCall(line))
-                // .map(line => this.markStrings(line))
-                // .map(line => this.markSpecialCharacters(line))
-                // .map(line => this.markVariablesAndKeywords(line))
-                // .map(line => this.escapeHtml(line))
-                // .map(line => this.convertClassNamesToHtml(line))
-                // .map(line => this.convertCharsToHtml(line))
-                // .map(line => this.convertKeywordsToHtml(line))
-                // .map(line => this.convertStringsToHtml(line))
-                // .map(line => this.convertMethodCallsToHtml(line))
-                // .map(line => this.convertVariablesAndKeywordToHtml(line))
-                // .map(line => this.addIntents(line))
+                .map(line => this.markClassNameStatic(line))
+                .map(line => this.markClassNames(line))
+                .map(line => this.markImports(line))
+                .map(line => this.markMethodCall(line))
+                .map(line => this.markStrings(line))
+                .map(line => this.markSpecialCharacters(line))
+                .map(line => this.markVariablesAndKeywords(line))
+                .map(line => this.escapeHtml(line))
+                .map(line => this.convertClassNamesToHtml(line))
+                .map(line => this.convertCharsToHtml(line))
+                .map(line => this.convertKeywordsToHtml(line))
+                .map(line => this.convertStringsToHtml(line))
+                .map(line => this.convertMethodCallsToHtml(line))
+                .map(line => this.convertVariablesAndKeywordToHtml(line))
+                .map(line => this.addIntents(line))
             ;
         }
     }
