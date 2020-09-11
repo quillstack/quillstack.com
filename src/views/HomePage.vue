@@ -10,6 +10,11 @@
                 </router-link>
             </li>
             <li>
+                <router-link :to="{ name: 'request' }" class="link">
+                    Request
+                </router-link>
+            </li>
+            <li>
                 <router-link :to="{ name: 'benchmark' }" class="link">
                     Benchmark
                 </router-link>

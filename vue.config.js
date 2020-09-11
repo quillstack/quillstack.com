@@ -4,8 +4,9 @@ module.exports = {
         prerenderSpa: {
             renderRoutes: [
                 '/',
-                '/di/',
                 '/benchmark/',
+                '/di/',
+                '/request/',
             ],
             useRenderEvent: true,
             headless: true,
