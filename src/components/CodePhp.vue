@@ -1,6 +1,6 @@
 <template>
     <div class="code">
-        <ul>
+        <ul class="main">
             <li v-for="(line, index) in getLines" :key="index">
                 <span v-html="line"></span>
             </li>

@@ -5,7 +5,7 @@ module.exports = {
             renderRoutes: [
                 '/',
                 '/di/',
-                '/dependency-injection/',
+                '/benchmark/',
             ],
             useRenderEvent: true,
             headless: true,

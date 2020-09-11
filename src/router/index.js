@@ -2,10 +2,19 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import DependencyInjection from '@/views/DependencyInjection';
 import HomePage from '@/views/HomePage';
+import Benchmark from "@/views/Benchmark";
 
 Vue.use(VueRouter);
 
 const routes = [
+    {
+        path: '/',
+        name: 'home',
+        component: HomePage,
+        meta: {
+            title: 'QuillStack'
+        }
+    },
     {
         path: '/di/',
         name: 'di',
@@ -15,11 +24,11 @@ const routes = [
         }
     },
     {
-        path: '/',
-        name: 'home',
-        component: HomePage,
+        path: '/benchmark/',
+        name: 'benchmark',
+        component: Benchmark,
         meta: {
-            title: 'QuillStack'
+            title: 'QuillStack - Benchmark'
         }
     }
 ];

@@ -12,18 +12,55 @@
         <h3>
             Table of contents
         </h3>
-        <p>
-            1. <a class="link" href="#what-is-a-di-container">What is a DI Container?</a><br>
-            1.1. <a class="link" href="#repository-service-pattern">The Repository-Service Pattern</a><br>
-            1.2. <a class="link" href="#mvc-pattern">MVC Pattern</a><br>
-            2. <a class="link" href="#installation">Installation</a><br>
-            3. <a class="link" href="#usage">Usage</a><br>
-            3.1. <a class="link" href="#simple-usage">Simple usage</a><br>
-            3.2. <a class="link" href="#dependencies-based-on-interfaces">Dependencies based on interfaces</a><br>
-            3.3. <a class="link" href="#dependencies-with-parameters">Dependencies with parameters</a>
-        </p>
-        <h2>
-            <a name="what-is-a-di-container">What is the DI Container?</a>
+        <ol class="list-decimal main">
+            <li>
+                <a href="#" class="link" v-scroll-to="'#what-is-a-di-container'">
+                    What is a DI Container?
+                </a>
+            </li>
+            <ul class="list-disc">
+                <li>
+                    <a href="#" class="link" v-scroll-to="'#repository-service-pattern'">
+                        The Repository-Service Pattern
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link" v-scroll-to="'#mvc-pattern'">
+                        MVC Pattern
+                    </a>
+                </li>
+            </ul>
+            <li>
+                <a href="#" class="link" v-scroll-to="'#installation'">
+                    Installation
+                </a>
+            </li>
+            <li>
+                <a href="#" class="link" v-scroll-to="'#usage'">
+                    Usage
+                </a>
+            </li>
+            <ul class="list-disc">
+                <li>
+                    <a href="#" class="link" v-scroll-to="'#simple-usage'">
+                        Simple usage
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link" v-scroll-to="'#dependencies-based-on-interfaces'">
+                        Dependencies based on interfaces
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link" v-scroll-to="'#dependencies-with-parameters'">
+                        Dependencies with parameters
+                    </a>
+                </li>
+            </ul>
+
+        </ol>
+        <h2 id="what-is-a-di-container">
+            What is the DI Container?
         </h2>
         <p>
             Every time you need a create a new instance of some class, you use the keyword <em>new</em>, like here:
@@ -36,8 +73,8 @@
         <p>
             Of course our example is very simple. Life brings us more difficult problems to solve.
         </p>
-        <h3>
-            <a name="repository-service-pattern">The Repository-Service Pattern</a>
+        <h3 id="repository-service-pattern">
+            The Repository-Service Pattern
         </h3>
         <p>
             One of the most popular design patterns is <em>the Repository-Service pattern</em>. More complex systems
@@ -73,8 +110,8 @@
         <p>
             The implementation of this kind of library is very often based on recursion.
         </p>
-        <h3>
-            <a name="mvc-pattern">MVC Pattern</a>
+        <h3 id="mvc-pattern">
+            MVC Pattern
         </h3>
         <p>
             Containers are often used in MVC frameworks. The first initialized class is a <em>Controller</em>, where
@@ -88,15 +125,15 @@
         <p>
             All of this work is done by framework for us, so we don't have to worry about it.
         </p>
-        <h2>
-            <a name="installation">Installation</a>
+        <h2 id="installation">
+            Installation
         </h2>
         <p>
             To install this package, run the standard command using
             <a class="link" target="_blank" href="https://getcomposer.org/" rel="noopener noreferrer">Composer</a>:
         </p>
         <div class="code">
-            <ul>
+            <ul class="main">
                 <li>
                     <span class="char">
                         composer require quillstack/di
@@ -107,19 +144,19 @@
         <p>
             The package will be ready to use after that.
         </p>
-        <h2>
-            <a name="usage">Usage</a>
+        <h2 id="usage">
+            Usage
         </h2>
         <p>
             You can use QuillStack DI when you want:
         </p>
-        <ul class="list-disc">
+        <ul class="list-disc main">
             <li>To have a simple and fast DI container.</li>
             <li>Define dependencies based on interfaces.</li>
             <li>Define parameters e.g. credentials for a database in <em>Database</em> class.</li>
         </ul>
-        <h3>
-            <a name="simple-usage">Simple usage</a>
+        <h3 id="simple-usage">
+            Simple usage
         </h3>
         <p>
             You can easily start using a DI Container:
@@ -129,8 +166,8 @@
             This code creates an instance of the container class. The container creates every class with <em>get</em>
             method, in our case it will be <em>ExampleController</em>.
         </p>
-        <h3>
-            <a name="dependencies-based-on-interfaces">Dependencies based on interfaces</a>
+        <h3 id="dependencies-based-on-interfaces">
+            Dependencies based on interfaces
         </h3>
         <p>
             If you want to define which class should be loaded based on an interface, you can easily do that:
@@ -149,8 +186,8 @@
             open to changes of this implementation in the future. If you decide to do that, you'll have to change
             just one line.
         </p>
-        <h3>
-            <a name="dependencies-with-parameters">Dependencies with parameters</a>
+        <h3 id="dependencies-with-parameters">
+            Dependencies with parameters
         </h3>
         <p>
             If some of your classes require parameters, define them as an array passed on the second parameter to

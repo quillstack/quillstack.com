@@ -12,7 +12,8 @@
         "lodash": "^4.17.20",
         "vue": "^2.6.12",
         "vue-lodash": "^2.1.2",
-        "vue-router": "^3.4.3"
+        "vue-router": "^3.4.3",
+        "vue-scrollto": "^2.18.2"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^4.5.4",
