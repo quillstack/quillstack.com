@@ -30,6 +30,9 @@ export default {
     },
     buildModules: [
         '@nuxtjs/tailwindcss',
+        ['@nuxtjs/google-analytics', {
+            id: 'UA-37770230-7'
+        }],
     ],
     modules: [
         'vue-scrollto/nuxt',
