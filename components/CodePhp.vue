@@ -2,7 +2,7 @@
     <div class="code">
         <ul class="main">
             <li v-for="(line, index) in getLines" :key="index">
-                <span v-html="line"></span>
+                <span><pre v-html="line"></pre></span>
             </li>
         </ul>
     </div>
@@ -216,9 +216,6 @@ export default {
         },
         escapeHtml(line) {
             return line.replace('<', '&lt;');
-        },
-        addIntents(line) {
-            return _.replace(line, '    ', '<span class="intent"></span>');
         }
     },
     computed: {
@@ -238,7 +235,6 @@ export default {
                 .map(line => this.convertStringsToHtml(line))
                 .map(line => this.convertMethodCallsToHtml(line))
                 .map(line => this.convertVariablesAndKeywordToHtml(line))
-                .map(line => this.addIntents(line))
             ;
         }
     }

@@ -4,6 +4,14 @@
     font-family: "Libre Baskerville";
     src: url("~assets/fonts/LibreBaskerville-Regular.woff2") format("woff2"),
     url("~assets/fonts/LibreBaskerville-Regular.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("~assets/fonts/SourceCodePro-Regular.woff2") format("woff2"),
+    url("~assets/fonts/SourceCodePro-Regular.woff") format("woff");
+    font-display: swap;
 }
 
 body {
@@ -13,22 +21,22 @@ body {
 
 h1 {
     @apply mt-10 text-4xl font-serif pt-3 leading-snug w-11/12 mx-auto;
-    font-family: "Libre Baskerville";
+    font-family: "Libre Baskerville", serif;
 }
 
 h2 {
     @apply mt-10 text-2xl font-serif pt-3 leading-8 w-11/12 mx-auto;
-    font-family: "Libre Baskerville";
+    font-family: "Libre Baskerville", serif;
 }
 
 h3 {
     @apply mt-8 text-xl font-serif pt-3 leading-6 w-11/12 mx-auto;
-    font-family: "Libre Baskerville";
+    font-family: "Libre Baskerville", serif;
 }
 
 p, ul, ol {
     @apply text-base font-serif pb-3 w-11/12 my-4 mx-auto leading-loose;
-    font-family: "Libre Baskerville";
+    font-family: "Libre Baskerville", serif;
 }
 
 p.glue-top {
@@ -68,7 +76,7 @@ ol.main > li {
 
 .toc {
     @apply py-4;
-    background: #cccccc;
+    background: #ddd;
 }
 
 ul {
@@ -86,11 +94,11 @@ div.code ul {
 
 div.code ul li {
     @apply whitespace-no-wrap;
-    font-family: monospace;
+    font-family: "Source Code Pro", monospace;
 }
 
 div.code ul li span {
-    @apply text-lg;
+    @apply text-base;
 }
 
 div.code ul span.variable {
@@ -115,11 +123,6 @@ div.code ul span.char {
 
 div.code ul span.method {
     color: #f7c548;
-}
-
-div.code ul span.intent {
-    display: inline-block;
-    width: 50px;
 }
 
 #logo {

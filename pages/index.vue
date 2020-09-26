@@ -1,7 +1,11 @@
 <template>
     <div>
+        <h1>
+            The Quill Stack
+        </h1>
         <p>
-            Components:
+            The Quill Stack is a group of components you can use separately or combine them into the framework.
+            The main goal was to create the packages which will be fast and simple without any magic features.
         </p>
         <ul class="list-disc main">
             <li>
