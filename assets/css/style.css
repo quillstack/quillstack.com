@@ -98,7 +98,7 @@ div.code ul li {
 }
 
 div.code ul li span {
-    @apply text-base;
+    @apply text-sm;
 }
 
 div.code ul span.variable {

@@ -15,7 +15,7 @@
             </h3>
             <ol class="list-decimal main">
                 <li>
-                    <a href="#" class="link" v-on:click.prevent="scrollTo('#what-is-a-di-container')">
+                    <a href="#" class="link" v-scroll-to="'#what-is-a-di-container'">
                         What is a DI Container?
                     </a>
                 </li>
@@ -202,45 +202,65 @@
 </template>
 
 <script>
-import LotOfDependencies from '@/assets/content/code-php/di/lot-of-dependencies.json';
-import MediaService from '@/assets/content/code-php/di/media-service.json';
-import MvcDependencies from '@/assets/content/code-php/di/mvc-dependencies.json';
-import MvcContainer from '@/assets/content/code-php/di/mvc-container.json';
-import SimpleUsage from '@/assets/content/code-php/di/simple-usage.json';
-import Interfaces from '@/assets/content/code-php/di/interfaces.json';
-import Parameters from '@/assets/content/code-php/di/parameters.json';
+import CodePhp from '@/components/CodePhp';
 
 export default {
     name: 'DependencyInjection',
     head: {
         title: 'Dependency Injection - QuillStack'
     },
+    components: {
+        CodePhp
+    },
     data() {
         return {
             newDog: [
                 "$dog = new Dog('Forest');"
             ],
-            lotOfDependencies: [],
-            mediaService: [],
-            mvcDependencies: [],
-            mvcContainer: [],
-            simpleUsage: [],
-            interfaces: [],
-            parameters: []
-        }
-    },
-    mounted() {
-        this.lotOfDependencies = LotOfDependencies;
-        this.mediaService = MediaService;
-        this.mvcDependencies = MvcDependencies;
-        this.mvcContainer = MvcContainer;
-        this.simpleUsage = SimpleUsage;
-        this.interfaces = Interfaces;
-        this.parameters = Parameters;
-    },
-    methods: {
-        scrollTo(id) {
-            this.$scrollTo(id);
+            lotOfDependencies: [
+                "$media = new MediaService(",
+                "    new Logger(), new MediaRepository(",
+                "        new Database(), new Logger()",
+                "    )",
+                ");"
+            ],
+            mediaService: [
+                "$media = $container->get(MediaService::class);"
+            ],
+            mvcDependencies: [
+                "new MediaController(",
+                "    new MediaService(",
+                "        new Logger(), new MediaRepository(",
+                "            new Database(), new Logger()",
+                "        )",
+                "    )",
+                ");"
+            ],
+            mvcContainer: [
+                "$media = $container->get(MediaController::class);"
+            ],
+            simpleUsage: [
+                "<?php",
+                "    ",
+                "use QuillStack\\DI\\Container;",
+                "    ",
+                "require __DIR__ . '/../vendor/autoload.php';",
+                "    ",
+                "$container = new Container();",
+                "$controller = $container->get(ExampleController::class);"
+            ],
+            interfaces: [
+                "$container = new Container([",
+                "    LoggerInterface::class => Logger::class,",
+                "]);"
+            ],
+            parameters: [
+                "$container = new Container([",
+                "    Database::class => [",
+                "        'hostname' => 'localhost',",
+                "    ],",
+                "]);"
+            ]
         }
     }
 };

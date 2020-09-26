@@ -1,3 +1,0 @@
-[
-    "$media = $container->get(MediaController::class);"
-]

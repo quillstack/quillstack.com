@@ -1,9 +1,0 @@
-[
-    "new MediaController(",
-    "    new MediaService(",
-    "        new Logger(), new MediaRepository(",
-    "            new Database(), new Logger()",
-    "        )",
-    "    )",
-    ");"
-]
