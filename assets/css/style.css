@@ -93,5 +93,9 @@ div.code ul span.intent {
     width: 50px;
 }
 
+#logo {
+    filter: invert(14%) sepia(0%) saturate(0%) hue-rotate(356deg) brightness(97%) contrast(91%);
+}
+
 @tailwind components;
 @tailwind utilities;
