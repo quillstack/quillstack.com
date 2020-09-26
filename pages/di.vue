@@ -9,56 +9,57 @@
                 PSR-11: Container interface</a>.
             The library was built with the main goal: to be fast!
         </p>
-        <h3>
-            Table of contents
-        </h3>
-        <ol class="list-decimal main">
-            <li>
-                <a href="#" class="link" v-on:click.prevent="scrollTo('#what-is-a-di-container')">
-                    What is a DI Container?
-                </a>
-            </li>
-            <ul class="list-disc">
+        <div class="toc">
+            <h3 class="text-center">
+                Table of contents
+            </h3>
+            <ol class="list-decimal main">
                 <li>
-                    <a href="#" class="link" v-scroll-to="'#repository-service-pattern'">
-                        The Repository-Service Pattern
+                    <a href="#" class="link" v-on:click.prevent="scrollTo('#what-is-a-di-container')">
+                        What is a DI Container?
+                    </a>
+                </li>
+                <ul class="list-disc">
+                    <li>
+                        <a href="#" class="link" v-scroll-to="'#repository-service-pattern'">
+                            The Repository-Service Pattern
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link" v-scroll-to="'#mvc-pattern'">
+                            MVC Pattern
+                        </a>
+                    </li>
+                </ul>
+                <li>
+                    <a href="#" class="link" v-scroll-to="'#installation'">
+                        Installation
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="link" v-scroll-to="'#mvc-pattern'">
-                        MVC Pattern
+                    <a href="#" class="link" v-scroll-to="'#usage'">
+                        Usage
                     </a>
                 </li>
-            </ul>
-            <li>
-                <a href="#" class="link" v-scroll-to="'#installation'">
-                    Installation
-                </a>
-            </li>
-            <li>
-                <a href="#" class="link" v-scroll-to="'#usage'">
-                    Usage
-                </a>
-            </li>
-            <ul class="list-disc">
-                <li>
-                    <a href="#" class="link" v-scroll-to="'#simple-usage'">
-                        Simple usage
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link" v-scroll-to="'#dependencies-based-on-interfaces'">
-                        Dependencies based on interfaces
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link" v-scroll-to="'#dependencies-with-parameters'">
-                        Dependencies with parameters
-                    </a>
-                </li>
-            </ul>
-
-        </ol>
+                <ul class="list-disc">
+                    <li>
+                        <a href="#" class="link" v-scroll-to="'#simple-usage'">
+                            Simple usage
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link" v-scroll-to="'#dependencies-based-on-interfaces'">
+                            Dependencies based on interfaces
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link" v-scroll-to="'#dependencies-with-parameters'">
+                            Dependencies with parameters
+                        </a>
+                    </li>
+                </ul>
+            </ol>
+        </div>
         <h2 id="what-is-a-di-container">
             What is the DI Container?
         </h2>
