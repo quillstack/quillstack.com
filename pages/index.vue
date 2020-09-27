@@ -30,7 +30,11 @@
 <script>
 export default {
     head: {
-        title: 'QuillStack'
+        title: 'QuillStack',
+        meta: [
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        ]
     }
 }
 </script>

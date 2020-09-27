@@ -207,7 +207,11 @@ import CodePhp from '@/components/CodePhp';
 export default {
     name: 'DependencyInjection',
     head: {
-        title: 'Dependency Injection - QuillStack'
+        title: 'Dependency Injection - QuillStack',
+        meta: [
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        ]
     },
     components: {
         CodePhp

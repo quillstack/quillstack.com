@@ -2,7 +2,9 @@
     <div class="code">
         <ul class="main">
             <li v-for="(line, index) in getLines" :key="index">
-                <span><pre v-html="line"></pre></span>
+                <span>
+                    <pre v-html="line" class="inline-block ml-2 mr-6"></pre>
+                </span>
             </li>
         </ul>
     </div>
