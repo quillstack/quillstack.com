@@ -60,7 +60,7 @@
                 </ul>
             </ol>
         </div>
-        <h2 ref="what-is-a-di-container">
+        <h2 id="what-is-a-di-container">
             What is the DI Container?
         </h2>
         <p>
@@ -218,10 +218,7 @@ export default {
     },
     methods: {
         scrollMeTo(refName) {
-            var element = this.$refs[refName];
-            var top = element.offsetTop;
-
-            window.scrollTo(0, top);
+            this.$scrollTo('#' + refName, 1000, { easing: 'ease', cancelable: false })
         }
     },
     data() {
