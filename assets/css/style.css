@@ -44,7 +44,7 @@ p.glue-top {
 }
 
 a.link, a.link:visited {
-    @apply text-blue-600 border-b;
+    @apply text-blue-600 border-b cursor-pointer;
     border-color: #cccccc;
 }
 

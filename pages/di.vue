@@ -15,7 +15,7 @@
             </h3>
             <ol class="list-decimal main">
                 <li>
-                    <a href="#" class="link" v-scroll-to="'#what-is-a-di-container'">
+                    <a class="link" @click="scrollMeTo('what-is-a-di-container')">
                         What is a DI Container?
                     </a>
                 </li>
@@ -60,7 +60,7 @@
                 </ul>
             </ol>
         </div>
-        <h2 id="what-is-a-di-container">
+        <h2 ref="what-is-a-di-container">
             What is the DI Container?
         </h2>
         <p>
@@ -215,6 +215,14 @@ export default {
     },
     components: {
         CodePhp
+    },
+    methods: {
+        scrollMeTo(refName) {
+            var element = this.$refs[refName];
+            var top = element.offsetTop;
+
+            window.scrollTo(0, top);
+        }
     },
     data() {
         return {

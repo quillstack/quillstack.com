@@ -14,6 +14,11 @@
                 </nuxt-link>
             </li>
             <li>
+                <nuxt-link to="/headers" class="link">
+                    Headers
+                </nuxt-link>
+            </li>
+            <li>
                 <nuxt-link to="/request" class="link">
                     Request
                 </nuxt-link>
