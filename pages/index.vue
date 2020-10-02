@@ -9,22 +9,22 @@
         </p>
         <ul class="list-disc main">
             <li>
-                <nuxt-link to="/di" class="link">
+                <nuxt-link to="/di/" class="link">
                     Dependency Injection Container
                 </nuxt-link>
             </li>
             <li>
-                <nuxt-link to="/headers" class="link">
+                <nuxt-link to="/headers/" class="link">
                     Headers
                 </nuxt-link>
             </li>
             <li>
-                <nuxt-link to="/request" class="link">
+                <nuxt-link to="/request/" class="link">
                     Request
                 </nuxt-link>
             </li>
             <li>
-                <nuxt-link to="/benchmark" class="link">
+                <nuxt-link to="/benchmark/" class="link">
                     Benchmark
                 </nuxt-link>
             </li>

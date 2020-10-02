@@ -24,18 +24,11 @@ export default {
     redirect: [
         {
             // eslint-disable-next-line
-            from: '(?!^\/$|^\/[?].*$)(.*\/[?](.*)$|.*\/$)',
-            to: (from, req) => {
-                const base = req._parsedUrl.pathname.replace(/\/$/, '');  // We take pathname instead of req.url because of the query parameters
-                const search = req._parsedUrl.search;
-                return base + (search != null ? search : '');
-            },
+            from: '^.*(?<!\/)$',
+            to: (from, req) => req.url + '/',
             statusCode: 301
         },
     ],
-    router: {
-        trailingSlash: false
-    },
     generate: {
         dir: 'docs'
     },
