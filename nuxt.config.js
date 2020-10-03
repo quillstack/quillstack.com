@@ -2,6 +2,9 @@ import webpack from 'webpack';
 const path = require('path');
 
 export default {
+    plugins: [
+        'plugins/vue-scroll.js',
+    ],
     build: {
         dir: 'docs',
         plugins: [
@@ -39,7 +42,6 @@ export default {
         }],
     ],
     modules: [
-        'vue-scrollto/nuxt',
         '@nuxtjs/redirect-module',
         'nuxt-purgecss',
     ],
